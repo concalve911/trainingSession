@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "../redux/store";
 import styled from "@emotion/styled";
+import { setJohnIsAdmin } from "../redux/slices/sliceSecond";
 
 const StyledButton = styled.button`
   background-color: #4f46e5;
@@ -35,7 +37,8 @@ type User = {
 };
 
 function First() {
-  const [admin, setAdmin] = useState<boolean>(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const admin = useSelector((state: RootState) => state.johnUser.johnIsAdmin);
 
   const user: User = {
     name: "John",
@@ -50,7 +53,7 @@ function First() {
   }
 
   const handleClick = () => {
-    setAdmin((prev) => !prev);
+    dispatch(setJohnIsAdmin(!admin));
   };
 
   const handleMessage = () => {
