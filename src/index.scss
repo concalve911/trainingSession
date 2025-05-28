@@ -1,0 +1,24 @@
+@use "./pages/home.scss";
+@use "./components/theme-switch.scss";
+@use "./components/header.scss";
+
+body {
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
